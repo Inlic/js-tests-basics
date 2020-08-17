@@ -6,6 +6,28 @@
     // input: 'Sunday', true
     // output: 7
 
+/* solution check with for loops and object */
+
+function daysPosition(day, offset=false){
+    let position_object = {
+        weekday: ["sunday","monday","tuesday","wednesday","thursday","friday"],
+        regular: [7,1,2,3,4,5,6],
+        off: [1,2,3,4,5,6,7]
+    }
+    if(position_object.weekday.includes(day.toLowerCase())){
+        for(i = 0; i <= position_object.weekday.length; i++){
+            if(day.toLowerCase() === position_object.weekday[i] && !offset){
+                return position_object.off[i]
+            } else if(day.toLowerCase() === position_object.weekday[i] && offset){
+                return position_object.regular[i]
+            }
+        }
+    } else {
+        return "That's not a day of the week"
+    }
+}
+
+/*
 function daysPosition(day, offset=false){
     switch(offset){
         case true:
@@ -50,7 +72,7 @@ function daysPosition(day, offset=false){
             return "That's not a day of the week"
     }
 }
-
+*/
 
 // --------------------------------------------
 
