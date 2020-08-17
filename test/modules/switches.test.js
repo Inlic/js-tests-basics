@@ -5,7 +5,7 @@ describe("switches.js", () => {
          chai.assert.isTrue(typeof daysPosition("sunday") == "number" || typeof daysPosition("sunday") == "string", "Return type must be number (or string if bad input).")
       })
       it("returns the accurate number for offset false", () => {
-         chai.assert.strictEqual(daysPosition("monday"), 2, "With offset false the week starts on Sunday.")
+         chai.assert.strictEqual(daysPosition("monday",), 2, "With offset false the week starts on Sunday.")
       })
       it("returns the accurate number for offset true", () => {
          chai.assert.strictEqual(daysPosition("monday", true), 1, "With offset true the week starts on Monday.")
